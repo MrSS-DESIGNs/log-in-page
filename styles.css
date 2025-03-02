@@ -1,0 +1,263 @@
+ 
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background-color: #f8f9fa;
+}
+
+/* Entry Animation */
+.entry-screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    animation: colorFlash 0.3s linear 6;
+    z-index: 1000;
+}
+
+@keyframes colorFlash {
+    0% { background: #ff4757; }
+    20% { background: #2ed573; }
+    40% { background: #1e90ff; }
+    60% { background: #ffa502; }
+    80% { background: #a4b0be; }
+    100% { background: #ff6b81; }
+}
+
+/* Intro Section */
+.intro-section {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #2c3e50;
+    opacity: 0;
+    animation: introFadeIn 1s forwards 1.8s;
+    z-index: 800;
+}
+
+.intro-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.intro-section p {
+    font-size: 1.2rem;
+}
+
+@keyframes introFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.intro-section.fade-out {
+    animation: introFadeOut 1s forwards;
+}
+
+@keyframes introFadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+/* Auth Interface */
+.auth-container {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.auth-container.visible {
+    opacity: 1;
+    visibility: visible;
+    animation: pageFadeIn 1s forwards;
+}
+
+@keyframes pageFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.grid-system {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    min-height: 100vh;
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Brand Section */
+.brand-section {
+    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    padding: 3rem;
+    color: white;
+    display: grid;
+    align-content: center;
+    text-align: center;
+}
+
+.brand-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.brand-section h3 {
+    font-weight: 500;
+}
+
+.brand-section p {
+    font-weight: 300;
+}
+
+/* Authentication Form */
+.auth-form {
+    padding: 4rem 2rem;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.auth-form h2 {
+    margin-bottom: 2rem;
+    color: #2c3e50;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+}
+
+input {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    font-size: 1rem;
+}
+
+button {
+    background: #3498db;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #2980b9;
+}
+
+.switch-link {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.switch-link a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.switch-link a:hover {
+    text-decoration: underline;
+}
+
+/* Switch Effect */
+.switch-active .grid-system {
+    grid-template-columns: 60% 40%;
+}
+
+.switch-active .brand-section {
+    background: #e74c3c;
+}
+
+/* Hidden Class */
+.hidden { display: none; }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .grid-system {
+        grid-template-columns: 1fr;
+    }
+
+    .brand-section {
+        display: none;
+    }
+
+    .auth-form {
+        padding: 2rem;
+    }
+}
+@keyframes logoFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes logoFadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+/* ... existing styles ... */
+
+/* Password Visibility Toggle */
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-wrapper input {
+    flex: 1;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #888;
+}
+
+.toggle-password:hover {
+    color: #555;
+}
+
+/* Error Messages */
+.error-message {
+    color: #e74c3c;
+    font-size: 0.9rem;
+    height: 1em;
+    margin-top: 0.5em;
+}
+
+/* Remember Me */
+.remember-me {
+    display: flex;
+    align-items: center;
+}
+
+.remember-me input {
+    margin-right: 0.5em;
+}
+
+.forgot-password {
+    text-align: right;
+    margin-top: 1em;
+}
+
+.forgot-password a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+ 
